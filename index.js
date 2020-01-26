@@ -1,22 +1,25 @@
-module.exports = (options, ctx) =>
-  Object.assign(ctx, {
-    postcss: {
-      plugins: [
-        require('postcss-normalize'),
-        require('postcss-import'),
-        require('postcss-typescale'),
-        require('postcss-font-family-system-ui'),
-        require('pixrem')({
-          html: false
-        }),
-        require('postcss-grid-system'),
-        require('postcss-grid-fluid'),
-        require('postcss-button'),
-        require('postcss-inline-svg'),
-        require('postcss-color-mod-function'),
-        require('postcss-preset-env')({
-          stage: 0
-        })
-      ]
-    }
-  })
+module.exports = {
+  chainWebpack(config, isServer) {
+    config.merge({
+      postcss: {
+        plugins: [
+          require('postcss-normalize'),
+          require('postcss-import'),
+          require('postcss-typescale'),
+          require('postcss-font-family-system-ui'),
+          require('pixrem')({
+            html: false
+          }),
+          require('postcss-grid-system'),
+          require('postcss-grid-fluid'),
+          require('postcss-button'),
+          require('postcss-inline-svg'),
+          require('postcss-color-mod-function'),
+          require('postcss-preset-env')({
+            stage: 0
+          })
+        ]
+      }
+    })
+  }
+}
