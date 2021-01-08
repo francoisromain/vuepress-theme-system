@@ -1,6 +1,6 @@
 <template>
   <nav
-    v-if="userLinks.length || repoLink"
+    v-if="userLinks && userLinks.length || repoLink"
     class="py-m"
   >
     <!-- user links -->

@@ -2,7 +2,7 @@
   <div>
     <div class="sidebar-content">
       <ul
-        v-if="items.length"
+        v-if="items && items.length"
         class="sidebar-links list-sans"
       >
         <li
